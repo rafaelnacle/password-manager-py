@@ -1,1 +1,3 @@
-amazon | rafael@mail.com | 123
+
+Amazon | rafael@mail.com | Isuckasapassword
+Ebay | rafael@mail.com | Ialsosuckasapassword

@@ -8,7 +8,9 @@ def save():
     password = password_entry.get()
 
     with open("data.txt", "a") as data_file:
-        data_file.write(f"{website} | {email} | {password}")
+        data_file.write(f"{website} | {email} | {password}\n")
+        website_entry.delete(0, END)
+        password_entry.delete(0, END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -46,10 +48,6 @@ generate_password_button = Button(text="Generate")
 generate_password_button.grid(row=3, column=3)
 add_button = Button(text="Add", width=25,height=2, command=save)
 add_button.grid(row=4, column=1, columnspan=2, pady=20)
-
-
-
-
 
 
 window.mainloop()
