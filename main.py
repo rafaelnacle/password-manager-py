@@ -1,7 +1,13 @@
 from tkinter import *
 from tkinter import messagebox
 from random import choice, randint, shuffle
+import pyperclip
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+def insert_copy_clipboard(password):
+    password_entry.insert(0, password)
+    pyperclip.copy(password)
+    messagebox.showinfo(title="Copied to Clipboard", message="Password copied do clipboard!")
+
 def generate_password():
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -17,10 +23,10 @@ def generate_password():
 
     generated_password = "".join(password_list)
     if len(password_entry.get()) == 0:
-        password_entry.insert(0, generated_password)
+        insert_copy_clipboard(generated_password)
     else:
         password_entry.delete(0, END)
-        password_entry.insert(0, generated_password)
+        insert_copy_clipboard(generated_password)
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
     website = website_entry.get()
