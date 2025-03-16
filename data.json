@@ -1,6 +1,10 @@
 {
-    "amazon": {
+    "Test": {
         "email": "rafael@mail.com",
-        "password": "1234"
+        "password": "12314"
+    },
+    "Test2": {
+        "email": "rafael@mail.com",
+        "password": "bc3d4V5b*JrP$"
     }
 }
